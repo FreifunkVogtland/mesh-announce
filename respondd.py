@@ -80,6 +80,7 @@ if __name__ == "__main__":
         ("", args.port),
         get_handler(args.directory, {'batadv_ifaces': args.batadv_ifaces})
     )
+    server.daemon_threads = True
 
     if args.mcast_ifaces:
         group_bin = socket.inet_pton(socket.AF_INET6, args.group)
