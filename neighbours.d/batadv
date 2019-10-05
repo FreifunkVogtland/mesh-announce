@@ -13,7 +13,7 @@
     lambda batadv_iface : [
         (line[0], float(line[1].strip('s')), int(line[2].strip(')')), line[4].strip('[]:'))
         for line in map(lambda l: l.replace('(', '').replace('[', '').replace('*', '').split(),
-            call(['batctl', '-m', batadv_iface, 'o', '-H']))
+            call(['batctl', 'meshif', batadv_iface, 'o', '-H']))
         if line[0] == line[3]
     ],
     batadv_ifaces
